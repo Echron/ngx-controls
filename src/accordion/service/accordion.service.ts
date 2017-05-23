@@ -6,18 +6,18 @@ import {AccordionSectionContentComponent} from '../component/accordion-section-c
 export class AccordionService {
 
     headers: Array<AccordionSectionHeaderComponent> = [];
-    bodies: Array<AccordionSectionContentComponent> = [];
+    contents: Array<AccordionSectionContentComponent> = [];
 
-    addListHeader(header: AccordionSectionHeaderComponent): void {
+    addSectionHeader(header: AccordionSectionHeaderComponent): void {
         this.headers.push(header);
     }
 
-    addListBody(body: AccordionSectionContentComponent): void {
-        this.bodies.push(body);
+    addSectionContent(body: AccordionSectionContentComponent): void {
+        this.contents.push(body);
     }
 
     collapseAll(): void {
-        this.bodies.forEach((item) => {
+        this.contents.forEach((item) => {
             item.expanded = false;
             item.expandedState = item.expanded.toString();
         });

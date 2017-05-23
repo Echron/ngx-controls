@@ -19,9 +19,10 @@ export class AccordionSectionContentComponent implements OnInit, OnChanges, OnDe
     @HostBinding('@collapsibleContentState')
     expandedState: string;
 
+    //TODO: move this to section component so we can add a class when the section is open
     @Input() expanded: boolean;
 
-    constructor(private el: ElementRef,
+    constructor(private element: ElementRef,
                 private accordionService: AccordionService,
                 private eventService: AccordionEventService) {
     }
@@ -33,23 +34,16 @@ export class AccordionSectionContentComponent implements OnInit, OnChanges, OnDe
     }
 
     hasContent(): boolean {
-        for (const child of this.el.nativeElement.childNodes) {
-            if ((<Element>child).tagName != null) {
-                return true;
-            }
-        }
-        return false;
+        return this.element.nativeElement.childElementCount > 0;
     }
 
     toggleCollapsibleItem() {
-
-        // toggle body's state only if it has any childs
         if (this.hasContent()) {
-
-            const tempExpanded = this.expanded;
+            //Close all
+            const tempExpanded: boolean = this.expanded;
             this.accordionService.collapseAll();
             this.expanded = tempExpanded;
-            //
+            //Toggle this one
             this.expanded = !this.expanded;
             this.expandedState = this.expanded.toString();
         }
@@ -59,7 +53,6 @@ export class AccordionSectionContentComponent implements OnInit, OnChanges, OnDe
         if (this.hasContent()) {
             for (const key of Object.keys(changes)) {
                 if (key === 'expanded' && changes.expanded.currentValue != null) {
-                    // console.debug('CollapsibleBody::ngOnChanges(), currentValue = ' + changes.expanded.currentValue);
                     // this.expanded = changes.expanded.currentValue;
                     this.expandedState = this.expanded.toString();
                 }

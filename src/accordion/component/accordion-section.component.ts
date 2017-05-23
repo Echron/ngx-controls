@@ -11,15 +11,14 @@ import {AccordionService} from '../service/accordion.service';
 })
 export class AccordionSectionComponent implements AfterContentInit {
 
-    @ContentChildren(AccordionSectionContentComponent) contentListBodies: QueryList<AccordionSectionContentComponent>;
+    @ContentChildren(AccordionSectionContentComponent) sectionContentComponents: QueryList<AccordionSectionContentComponent>;
 
     constructor(private accordionService: AccordionService) {
     }
 
     ngAfterContentInit() {
-        // store list bodies in 'CollapsibleService'
-        this.contentListBodies.forEach((item) => {
-            this.accordionService.addListBody(item);
+        this.sectionContentComponents.forEach((item) => {
+            this.accordionService.addSectionContent(item);
         });
     }
 
