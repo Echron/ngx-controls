@@ -1,0 +1,26 @@
+{
+  "name": "ngx-controls",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Echron/ngx-controls"
+  },
+  "author": {
+    "name": "Stijn Duynslaeger",
+    "email": "stijn@echron.be"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Echron/ngx-controls/issues"
+  },
+  "module": "ngx-controls.js",
+  "typings": "ngx-controls.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}
