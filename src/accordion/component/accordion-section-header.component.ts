@@ -2,7 +2,7 @@ import {Component, HostListener} from '@angular/core';
 import {AccordionEventService} from '../service/accordion-event.service';
 
 @Component({
-    selector: 'app-accordion-section-header',
+    selector: 'accordion-section-header',
     template: '<ng-content></ng-content>',
     styles: [`
         :host {

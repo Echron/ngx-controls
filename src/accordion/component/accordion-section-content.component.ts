@@ -4,7 +4,7 @@ import {AccordionService} from '../service/accordion.service';
 import {AccordionEventService} from '../service/accordion-event.service';
 
 @Component({
-    selector: 'app-accordion-section-content',
+    selector: 'accordion-section-content',
     template: '<ng-content></ng-content>',
     styles: [`
         :host {

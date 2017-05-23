@@ -5,8 +5,8 @@ import {AccordionEventService} from '../service/accordion-event.service';
 import {AccordionService} from '../service/accordion.service';
 
 @Component({
-    selector: 'app-accordion-section',
-    template: '<ng-content select="app-accordion-section-header"></ng-content><ng-content select="app-accordion-section-content"></ng-content>',
+    selector: 'accordion-section',
+    template: '<ng-content select="accordion-section-header"></ng-content><ng-content select="accordion-section-content"></ng-content>',
     providers: [AccordionEventService]
 })
 export class AccordionSectionComponent implements AfterContentInit {
